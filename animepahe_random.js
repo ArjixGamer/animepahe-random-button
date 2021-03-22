@@ -6,6 +6,7 @@
 // @author       Arjix
 // @match        *://*animepahe.com/*
 // @require      https://code.jquery.com/jquery-3.5.1.min.js
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
 function getRandomInt(min, max) {
@@ -18,12 +19,17 @@ function getRandomInt(min, max) {
 (function() {
     'use strict';
     const getRandomAnime = () => {
-        fetch("https://animepahe.com/anime").then(res => res.text()).then(function(res) {
-            const ALL_ANIME = Array.from(res.matchAll(/\<div class=\"col-12 col-md-6\"\>\n\<a href=\"(.*?)\"/g)).map(anime => anime[1])
-            const index = getRandomInt(1, ALL_ANIME.length - 1)
-            document.location.href = "https://animepahe.com" + ALL_ANIME[index]
-        })
-    }
+        GM_xmlhttpRequest({
+            method: "GET",
+            url: "https://raw.githubusercontent.com/ArjixGamer/animepahe-random-button/main/all_anime.json",
+            onload: function(res) {
+                const ALL_ANIME = JSON.parse(res.response)
+                const index = getRandomInt(1, ALL_ANIME.length - 1)
+                document.location.href = "https://animepahe.com" + ALL_ANIME[index]
+            }
+
+
+    })}
     const button = `<li class="nav-item">
                           <a class="nav-link" href="#" id="randomBtn" title="random">
                               random
