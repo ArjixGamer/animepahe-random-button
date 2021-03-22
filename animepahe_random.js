@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AnimePahe Random Anime
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  Adds a random anime button to animepahe
 // @author       Arjix
 // @match        *://*animepahe.com/*
