@@ -2,7 +2,7 @@ name: Generate new all_anime.json
 
 on:
   schedule:
-    - cron: 0 0 */5 * *
+    - cron: 0 */6 * * *
 
 jobs:
   build:
