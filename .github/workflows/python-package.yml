@@ -32,6 +32,7 @@ jobs:
         # Optional but recommended
         # Defaults to "Apply automatic changes"
         commit_message: Apply automatic changes
+        push_options: '--force'
 
         file_pattern: ./*
 
