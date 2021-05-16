@@ -33,7 +33,7 @@ jobs:
         # Defaults to "Apply automatic changes"
         commit_message: Apply automatic changes
 
-        file_pattern: all_anime.json
+        file_pattern: ./*
 
         # Optional local file path to the repository
         # Defaults to the root of the repository
